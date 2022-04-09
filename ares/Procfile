@@ -1,0 +1,1 @@
+web: node ./components/App.js
