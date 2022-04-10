@@ -11,7 +11,7 @@
       <schema-mapping>
         <introspection-scope>
           <node kind="database" qname="d24aijjaddl6n2">
-            <node kind="schema" qname="arres" />
+            <node kind="schema" qname="public" />
           </node>
         </introspection-scope>
       </schema-mapping>
