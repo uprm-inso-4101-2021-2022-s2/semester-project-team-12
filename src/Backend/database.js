@@ -1,6 +1,6 @@
 const {Client} = require('pg');
 
-const client = new Client ({
+const Arres_db = new Client ({
     host: "ec2-18-214-134-226.compute-1.amazonaws.com",
     port:5432,
     user: "lnnbqdnuqfxyts",
@@ -12,14 +12,4 @@ const client = new Client ({
     }
 })
 
-client.connect();
-
-client.query('SELECT * FROM "User"', (err, res)=>{
-    if (!err){
-        console.log(res.rows);
-    }
-    else{
-        console.log(err);
-    }
-    client.end();
-})
+module.exports = Arres_db;
