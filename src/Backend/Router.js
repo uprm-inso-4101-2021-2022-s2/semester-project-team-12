@@ -1,14 +1,23 @@
 const express = require('express')
 const router = express.Router()
-const Arres_db= require('./database')
+const User = require('./Controller/user_controller')
 
-Arres_db.connect();
 
 
         /*============
          User Views
         ============*/
 
+//GET ALL USERS
+router.get('/users',(req,res)=>{
+    res.send(User.get_all_user());
+    }
+)
+
+router.get('/user/:us_id', (req, res)=>{
+    let x = res.send(req.params)
+    res.send(User.get_user_id(x))
+})
 
 
 
