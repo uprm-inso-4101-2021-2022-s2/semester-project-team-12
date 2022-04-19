@@ -6,9 +6,10 @@ class UserDAO {
         this.password = password;
         this.first_name = first_name;
         this.last_name = last_name;
-        this.isProfessor = isprofessor;
-        this.Concentration = concentration;
+        this.isprofessor = isprofessor;
+        this.concentration = concentration;
     }
+
 
     static async create_user(email, password, first_name, last_name, isProfessor, Concentration) {
         let query;
@@ -104,7 +105,7 @@ class UserDAO {
         if(json!=="[]"){
             Arres_db.query('DELETE FROM "User" where us_id = $1', [user_id], (err, res) => {
                 if (!err) {
-                    const res = JSON.parse(json, (key, value) =>{
+                    const result = JSON.parse(json, (key, value) =>{
                         if(key==="us_id"){
                             console.log(JSON.stringify(value));
                         }

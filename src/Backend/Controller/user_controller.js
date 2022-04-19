@@ -1,10 +1,8 @@
 
-const express = require('express');
-const Arres_db = require('../database');
 const UserDao = require('../model/user');
 
 
-function get_all_user(){
+async function get_all_user(){
     const u_dao = UserDao.get_all_user()
         .then(result=>{
         if(result){
@@ -141,8 +139,8 @@ async function update_last_name(json){
 module.exports = {get_user_id, get_all_user, get_user_by_concentration, get_Professors, check_user, delete_user, create_user, update_email, update_password, update_first_name, update_last_name}
 
 
-// get_all_user();
+get_all_user();
 // delete_user(27);
 // check_user("working@gmail.com", "work")
-// get_user_id('{"name":10}');
+// get_user_id('{"name":1}');
 // update_email('{"us_id":1, "email":"testing@gmail.com"}')
