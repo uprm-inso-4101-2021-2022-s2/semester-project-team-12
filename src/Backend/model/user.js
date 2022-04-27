@@ -145,7 +145,7 @@ class UserDAO {
                 await Arres_db.query('UPDATE "User" SET email = $2 WHERE us_id=$1', query);
                 return JSON.stringify(result.rows)
             } else {
-                console.log(error)
+                console.log("Cannot update email")
             }
         } catch (error) {
             console.log("User does not exist!");
@@ -165,7 +165,7 @@ class UserDAO {
                 await Arres_db.query('UPDATE "User" SET password = $2 WHERE us_id=$1', query);
                 return JSON.stringify(result.rows)
             } else {
-                console.log(error)
+                console.log("Cannot update password")
             }
         } catch (error) {
             console.log("User does not exist!");
@@ -185,7 +185,7 @@ class UserDAO {
                 await Arres_db.query('UPDATE "User" SET first_name = $2 WHERE us_id=$1', query);
                 return JSON.stringify(result.rows)
             } else {
-                console.log(error)
+                console.log("Cannot update firstname")
             }
         } catch (error) {
             console.log("User does not exist!");
@@ -205,7 +205,7 @@ class UserDAO {
                 await Arres_db.query('UPDATE "User" SET last_name = $2 WHERE us_id=$1', query);
                 return JSON.stringify(result.rows)
             } else {
-                console.log(error)
+                console.log("Cannot update lastname")
             }
         } catch (error) {
             console.log("User does not exist!");

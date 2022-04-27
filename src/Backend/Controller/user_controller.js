@@ -56,8 +56,7 @@ async function check_user(email,password) {
         .then(result=>{
             if(result){
                 const obj = JSON.parse(result)
-                a = obj[0].us_id;
-                return a;
+                return obj[0].us_id;
             }
         })
 
@@ -114,8 +113,9 @@ async function update_password(json){
 
 async function update_first_name(json){
     const obj = JSON.parse(json)
+    const id = obj.us_id;
     const first = obj.first_name;
-    UserDao.update_firstname(first)
+    UserDao.update_firstname(id, first)
         .then(result=>{
             if(result){
                 console.log("First Name Updated")
@@ -126,8 +126,9 @@ async function update_first_name(json){
 
 async function update_last_name(json){
     const obj = JSON.parse(json)
+    const id = obj.us_id;
     const last = obj.last_name;
-    UserDao.update_lastname(last)
+    UserDao.update_lastname(id, last)
         .then(result=>{
             if(result){
                 console.log("Last Name Updated")
