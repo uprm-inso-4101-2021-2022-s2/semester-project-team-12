@@ -1,43 +1,42 @@
 const Arres_db = require('../database');
 
 class ResearchDAO {
-    constructor(email, password, first_name, last_name, isprofessor, concentration) {
-        this.email = email;
-        this.password = password;
-        this.first_name = first_name;
-        this.last_name = last_name;
-        this.isProfessor = isprofessor;
-        this.Concentration = concentration;
+    constructor(user_id, department, title, description, contacts) {
+        this.user_id = user_id;
+        this.department = department;
+        this.title = title;
+        this.description = description;
+        this.contacts = contacts;
     }
 
-    static async create_user(email, password, first_name, last_name, isProfessor, Concentration) {
+    static async create_research(user_id, department, title, description, contacts) {
         let query;
         try {
             query = [
-                email, password, first_name, last_name, isProfessor, Concentration
+                user_id, department, title, description, contacts
             ]
 
             await Arres_db.connect();
-            const check = await Arres_db.query('SELECT us_id FROM "User" WHERE email=$1', [email])
+            const check = await Arres_db.query('SELECT re_id FROM "Research" WHERE title=$1 AND user_id=$2', [title, user_id])
 
             if(JSON.stringify(check.rows)!=="[]"){
                 throw "error, user in system"
             }
             await Arres_db.query
-            ('INSERT INTO "User" ("email", "password", "first_name", "last_name", "isProfessor", "Concentration") VALUES($1,$2,$3,$4,$5,$6)', query);
+            ('INSERT INTO "User" ("user_id", "department", "title", "description", "contacts") VALUES($1,$2,$3,$4,$5)', query);
             return JSON.stringify(query);
         } catch (error) {
-            console.error("Email is already in system");
+            console.error("Research is already in system");
             return false;
         } finally {
             Arres_db.end();
         }
     }
 
-    static async get_all_user() {
+    static async get_all_research() {
         try{
             await Arres_db.connect();
-            const result = await Arres_db.query('SELECT * FROM "User"');
+            const result = await Arres_db.query('SELECT * FROM "Research"');
             return JSON.stringify(result.rows);
         } catch{
             return false;
@@ -46,16 +45,16 @@ class ResearchDAO {
         }
     }
 
-    static async get_user_by_id(user_id){
+    static async get_research_by_id(re_id){
         let query;
         try {
-            query = [user_id]
+            query = [re_id]
             await Arres_db.connect();
-            const result = await Arres_db.query('SELECT * FROM "User" WHERE us_id=$1', query);
+            const result = await Arres_db.query('SELECT * FROM "Research" WHERE re_id=$1', query);
             if(JSON.stringify(result.rows)!=="[]"){
                 return JSON.stringify(result.rows)
             }else{
-                console.log("User does not exist")
+                console.log("Research does not exist")
             }
         } catch (error) {
             console.error(error.stack);
@@ -216,4 +215,4 @@ class ResearchDAO {
 
 }
 
-module.exports= UserDAO;
+module.exports= ResearchDAO;
