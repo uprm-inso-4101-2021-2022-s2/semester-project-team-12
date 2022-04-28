@@ -3,14 +3,13 @@ const UserDao = require('../model/user');
 
 
 async function get_all_user(){
-    const u_dao = UserDao.get_all_user()
+    UserDao.get_all_user()
         .then(result=>{
         if(result){
             console.log(result)
             return result;
         }
     });
-    return u_dao;
 }
 
 async function get_user_id(user_id){
@@ -140,7 +139,7 @@ async function update_last_name(json){
 module.exports = {get_user_id, get_all_user, get_user_by_concentration, get_Professors, check_user, delete_user, create_user, update_email, update_password, update_first_name, update_last_name}
 
 
-get_all_user();
+// get_all_user();
 // delete_user(27);
 // check_user("working@gmail.com", "work")
 // get_user_id('{"name":1}');

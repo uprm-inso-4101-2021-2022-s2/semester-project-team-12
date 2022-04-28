@@ -114,12 +114,12 @@ class ApplicationDAO {
         Arres_db.end();
     }
 
-    static async update_cv(ap_id, cv) {
+    static async update_cv(ap_id, user_id, cv) {
         let query;
         try {
             query = [ap_id, cv]
             await Arres_db.connect()
-            const result = await Arres_db.query('SELECT * FROM "Application" WHERE ap_id= $1', [ap_id]);
+            const result = await Arres_db.query('SELECT * FROM "Application" WHERE ap_id= $1 AND user_id = $2', [ap_id,user_id]);
             let json = JSON.stringify(result.rows);
             if (json !== "[]") {
                 await Arres_db.query('UPDATE "Research Application" SET cv = $2 WHERE ap_id=$1', query);
@@ -134,12 +134,12 @@ class ApplicationDAO {
         }
     }
 
-    static async update_about(ap_id, about) {
+    static async update_about(ap_id, user_id, about) {
         let query;
         try {
             query = [ap_id, about]
             await Arres_db.connect()
-            const result = await Arres_db.query('SELECT * FROM "Application" WHERE ap_id= $1', [ap_id]);
+            const result = await Arres_db.query('SELECT * FROM "Application" WHERE ap_id= $1 AND user_id= $2', [ap_id, user_id]);
             let json = JSON.stringify(result.rows);
             if (json !== "[]") {
                 await Arres_db.query('UPDATE "Research Application" SET about = $2 WHERE ap_id=$1', query);
@@ -154,12 +154,12 @@ class ApplicationDAO {
         }
     }
 
-    static async update_skills(ap_id, skills) {
+    static async update_skills(ap_id, user_id, skills) {
         let query;
         try {
             query = [ap_id, skills]
             await Arres_db.connect()
-            const result = await Arres_db.query('SELECT * FROM "Application" WHERE ap_id= $1', [ap_id]);
+            const result = await Arres_db.query('SELECT * FROM "Application" WHERE ap_id= $1 AND user_id= $2', [ap_id, user_id]);
             let json = JSON.stringify(result.rows);
             if (json !== "[]") {
                 await Arres_db.query('UPDATE "Research Application" SET skills = $2 WHERE ap_id=$1', query);
