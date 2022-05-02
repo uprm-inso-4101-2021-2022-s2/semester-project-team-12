@@ -1,0 +1,23 @@
+/* Google Fonts */
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+.link-style{
+    text-decoration: none;
+    color: White;
+}
+
+.link-style:hover{
+    color:white;
+}
+
+.navbar-style{
+    background-color: green;
+    padding: 2%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.brand {
+    font-weight: bold;
+    font-size: 2.0rem;
+}

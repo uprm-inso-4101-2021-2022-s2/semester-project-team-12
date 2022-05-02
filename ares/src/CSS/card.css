@@ -1,0 +1,25 @@
+.group-style{
+    padding: 2%;
+}
+
+.card-style{
+    background-color: green;
+    color: white;
+    border-radius: 25px !important;
+    margin: 0 25px;
+}
+
+.btn-style{
+    color:green;
+    background-color: white;
+    border-radius: 50px;
+}
+
+.btn-style:hover{
+    background-color: white;
+    color: green;
+}
+
+.btn-alignment{
+    text-align: center;
+}

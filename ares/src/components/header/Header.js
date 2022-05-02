@@ -1,18 +1,53 @@
-import React from 'react'
+import React from "react";
+import { Link } from "react-router-dom";
+
+import "./Header.css";
+
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+} from "reactstrap";
 
 const Header = () => {
   return (
-    <div className='header'>
-        <h2>Academic Research</h2>
-        <h3 href="">Business Administration</h3>
-        <h3 href="">Arts and Sciences</h3>
-        <h3 href="">Agriculture Sciences</h3>
-        <h3 href="">Engineering</h3>
-        <h3 href="">Log In</h3>
-
+    <div>
+      <Navbar className="navbar-style" expand="md">
+        <NavbarBrand>
+          <Link className="link-style brand" to="/">ARRES</Link>
+        </NavbarBrand>
+        <NavbarToggler onClick={function noRefCheck() {}} />
+        <Collapse navbar>
+          <Nav className="ms-auto" navbar>
+            <NavItem>
+              <NavLink>
+                <Link className="link-style" to="/">Business Administration</Link>
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink>
+                <Link className="link-style" to="/">Arts and Sciences</Link>
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink>
+                <Link className="link-style" to="/">Agricultural Sciences</Link>
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink>
+                <Link className="link-style" to="/engineering">Engineering</Link>
+              </NavLink>
+            </NavItem>
+          </Nav>
+        </Collapse>
+      </Navbar>
     </div>
-    
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
