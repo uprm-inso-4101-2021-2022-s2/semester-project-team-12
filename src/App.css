@@ -19,13 +19,16 @@ main {
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: contain;
-    
+    margin:auto;
 }
 
 .footer {
     background-color: green;
     color: whitesmoke;
-    padding: 1rem;
     display: flex;
     justify-content: center;
+    padding: 2%;
+}
+.icon{
+    margin: 0 10px;
 }
