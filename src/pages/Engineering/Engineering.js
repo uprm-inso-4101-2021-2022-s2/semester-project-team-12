@@ -58,9 +58,9 @@ function EngineeringPage() {
 
       <Card className="card-style">
         <CardBody>
-          <CardTitle tag="h5">Embeded Systems</CardTitle>
+          <CardTitle tag="h5">Embedded Systems</CardTitle>
           <CardText>
-          ackground: The research group is studying FPGAs to apply them as Edge Computing devices. 
+          Background: The research group is studying FPGAs to apply them as Edge Computing devices.
           The group also has developed Embedded Systems applications in the areas of Internet of Things and Education, 
           having an outreach program called the Tech. Carnival with its main purpose being increasing the interest of high school 
           students on Electrical and Computer Engineering careers.

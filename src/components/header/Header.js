@@ -25,12 +25,12 @@ const Header = () => {
           <Nav className="ms-auto" navbar>
             <NavItem>
               <NavLink>
-                <Link className="link-style" to="/">Business Administration</Link>
+                <Link className="link-style" to="/ADEM">Business Administration</Link>
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink>
-                <Link className="link-style" to="/">Arts and Sciences</Link>
+                <Link className="link-style" to="/ARCI">Arts and Sciences</Link>
               </NavLink>
             </NavItem>
             <NavItem>
