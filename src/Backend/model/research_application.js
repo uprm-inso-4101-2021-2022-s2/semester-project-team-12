@@ -94,7 +94,6 @@ class ResearchAppDAO {
         }
     }
 
-
     static async get_research_status(status) {
         let query;
         try {

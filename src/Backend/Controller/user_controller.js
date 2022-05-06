@@ -13,10 +13,7 @@ async function get_all_user(){
 }
 
 async function get_user_id(user_id){
-    const json = user_id;
-    const obj = JSON.parse(json);
-    console.log(obj.name);
-    const u_dao = UserDao.get_user_by_id(obj.name)
+    const u_dao = UserDao.get_user_by_id(user_id)
         .then(result=>{
             if(result){
                 console.log(result)
@@ -142,5 +139,5 @@ module.exports = {get_user_id, get_all_user, get_user_by_concentration, get_Prof
 // get_all_user();
 // delete_user(27);
 // check_user("working@gmail.com", "work")
-// get_user_id('{"name":1}');
+// get_user_id(2);
 // update_email('{"us_id":1, "email":"testing@gmail.com"}')

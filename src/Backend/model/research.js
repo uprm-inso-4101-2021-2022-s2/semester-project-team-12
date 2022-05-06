@@ -77,7 +77,6 @@ class ResearchDAO {
         }
     }
 
-
     static async get_research_by_user(user_id){
         let query;
         try {

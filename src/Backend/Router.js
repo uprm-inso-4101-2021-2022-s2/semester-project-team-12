@@ -2,9 +2,9 @@ const express = require('express')
 const router = express.Router()
 const User = require('./Controller/user_controller')
 const UserDAO = require('./model/user')
-const Application = require('./Controller/application_controller')
-const Research = require('./Controller/research_controller')
-const Res_app = require('./Controller/researchapp_controller')
+const ApplicationDAO = require('./model/application')
+const ResearchDAO = require('./model/research')
+const Res_appDAO = require('./model/research_application')
 
 
 
@@ -27,27 +27,40 @@ app.get('/users',async (req,res)=>{
     }
 )
 
-app.get('/user/:us_id(\d+)', (req, res)=>{
-    res.send(User.get_user_id(req.params))
+app.get('/user/:us_id', (req, res)=>{
+    const us_id = req.params.us_id
+    res.send(UserDAO.get_user_by_id(us_id, res))
 })
 
-app.get('/user/Professors', (req, res)=>{
-    res.send(User.get_Professors())
+app.get('/user/Professors', async (req, res)=>{
+    res.send(UserDAO.get_Professors())
 })
 
-app.get('/user/:concentration', (req, res)=>{
+app.get('/user/:concentration', async (req, res)=>{
     let x = res.send(req.params)
-    res.send(User.get_user_by_concentration(x))
+    res.send(UserDAO.get_user_by_concentration(x))
 })
 
-app.put('/user/:us_id/firstname',(req,res) =>{
-    let x = res.send(req.params)
-    res.send(User.update_first_name(x))
+app.put('/user/:us_id/firstname', async (req,res) =>{
+    res.send(UserDAO.update_firstname(req.params))
+
 })
 
         /*==============
          Research Views
          ==============*/
+app.get('/research', async (req,res)=>{
+    const re_dao = await ResearchDAO.get_all_research()
+    res.send(re_dao);
+    }
+)
+
+app.get('/research/2', async (req,res)=>{
+    // let x = res.send(req.params)
+    const re_dao = await ResearchDAO.get_research_by_id(2)
+    res.send(re_dao);
+    }
+)
 
 
     /*=======================
