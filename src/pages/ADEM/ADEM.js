@@ -25,9 +25,9 @@ function EngineeringPage() {
                     </CardText>
                     <CardText>Status: Recruting</CardText>
                     <CardText>Point of Contact: moraima.dehoyos1@upr.edu</CardText>
-                    <div className="btn-alignment">
+                    {/* <div className="btn-alignment">
                         <Button className="btn-style">Apply Now!</Button>
-                    </div>
+                    </div> */}
                 </CardBody>
             </Card>
 
@@ -45,9 +45,9 @@ function EngineeringPage() {
                     </CardText>
                     <CardText>Status: Recruting</CardText>
                     <CardText>Point of Contact: leila.marcano@upr.edu</CardText>
-                    <div className="btn-alignment">
+                    {/* <div className="btn-alignment">
                         <Button className="btn-style">Apply Now!</Button>
-                    </div>
+                    </div> */}
                 </CardBody>
             </Card>
 
@@ -62,9 +62,9 @@ function EngineeringPage() {
                     </CardText>
                     <CardText>Status: Recruting</CardText>
                     <CardText>Point of Contact: moraima.dehoyos1@upr.edu</CardText>
-                    <div className="btn-alignment">
+                    {/* <div className="btn-alignment">
                         <Button className="btn-style">Apply Now!</Button>
-                    </div>
+                    </div> */}
                 </CardBody>
             </Card>
         </CardGroup>

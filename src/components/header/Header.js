@@ -35,12 +35,12 @@ const Header = () => {
             </NavItem>
             <NavItem>
               <NavLink>
-                <Link className="link-style" to="/">Agricultural Sciences</Link>
+                <Link className="link-style" to="/AGRI">Agricultural Sciences</Link>
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink>
-                <Link className="link-style" to="/engineering">Engineering</Link>
+                <Link className="link-style" to="/ENGINEERING">Engineering</Link>
               </NavLink>
             </NavItem>
           </Nav>

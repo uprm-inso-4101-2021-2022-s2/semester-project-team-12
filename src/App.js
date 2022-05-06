@@ -6,6 +6,7 @@ import HomePage from "./pages/home/Home";
 import EngineeringPage from "./pages/Engineering/Engineering";
 import AdemPage from "./pages/ADEM/ADEM"
 import ARCIPage from "./pages/ARCI/ARCI"
+import AgriPage from "./pages/AGRI/Agri";
 
 function App() {
     return (
@@ -14,9 +15,10 @@ function App() {
             <main>
                 <Routes>
                     <Route path="/" element={<HomePage />} />
-                    <Route path="/engineering" element={<EngineeringPage />} />
+                    <Route path="/ENGINEERING" element={<EngineeringPage />} />
                     <Route path="/ADEM" element={<AdemPage />}/>
                     <Route path="/ARCI" element={<ARCIPage />}/>
+                    <Route path="/AGRI" element={<AgriPage />}/>
                 </Routes>
             </main>
             <Footer />
