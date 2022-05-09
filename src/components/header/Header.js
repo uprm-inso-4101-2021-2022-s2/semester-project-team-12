@@ -43,6 +43,11 @@ const Header = () => {
                 <Link className="link-style" to="/ENGINEERING">Engineering</Link>
               </NavLink>
             </NavItem>
+            <NavItem>
+              <NavLink>
+                <Link className="link-style" to="/Login">Login|SignUp</Link>
+              </NavLink>
+            </NavItem>
           </Nav>
         </Collapse>
       </Navbar>
